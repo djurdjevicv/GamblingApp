@@ -7,18 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF1C23B32BF7B64A004BF66A /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C23B22BF7B64A004BF66A /* Date+Extension.swift */; };
+		DF1C23BC2BF8A325004BF66A /* RoundListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C23BB2BF8A325004BF66A /* RoundListView.swift */; };
+		DF1C23C02BF8A5A5004BF66A /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C23BF2BF8A5A5004BF66A /* NetworkingClient.swift */; };
+		DF1C23D02BF8BC6B004BF66A /* KinoOdds.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C23CF2BF8BC6B004BF66A /* KinoOdds.swift */; };
+		DF1C23D22BF8C89D004BF66A /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C23D12BF8C89D004BF66A /* Double+Extension.swift */; };
+		DF1C23D52BF8CC16004BF66A /* LiveResultsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C23D42BF8CC16004BF66A /* LiveResultsWebView.swift */; };
+		DF1C23D72BF8CC40004BF66A /* WebViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C23D62BF8CC40004BF66A /* WebViewRepresentable.swift */; };
+		DF1C23DA2BF8E8E2004BF66A /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C23D92BF8E8E2004BF66A /* TabBarView.swift */; };
+		DF1C23DD2BF8E91F004BF66A /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C23DC2BF8E91F004BF66A /* ResultsView.swift */; };
+		DF1C23E02BF92210004BF66A /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C23DF2BF92210004BF66A /* Color+Extension.swift */; };
+		DF1C23E22BF9230A004BF66A /* GreeceKinoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C23E12BF9230A004BF66A /* GreeceKinoDTO.swift */; };
+		DF1C23F82BF9292C004BF66A /* GreeceKinoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C23F72BF9292C004BF66A /* GreeceKinoContent.swift */; };
 		DF3DCF1D2BF68D7E00A87D4C /* GamblingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3DCF1C2BF68D7E00A87D4C /* GamblingAppApp.swift */; };
-		DF3DCF1F2BF68D7E00A87D4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3DCF1E2BF68D7E00A87D4C /* ContentView.swift */; };
+		DF3DCF1F2BF68D7E00A87D4C /* GreekKinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3DCF1E2BF68D7E00A87D4C /* GreekKinoView.swift */; };
 		DF3DCF212BF68D7F00A87D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF3DCF202BF68D7F00A87D4C /* Assets.xcassets */; };
 		DF3DCF242BF68D7F00A87D4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF3DCF232BF68D7F00A87D4C /* Preview Assets.xcassets */; };
+		DFFCEA552BF938F9004B8A4F /* WinningNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFCEA542BF938F9004B8A4F /* WinningNumbers.swift */; };
+		DFFCEA572BF93916004B8A4F /* UpcomingGameDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFCEA562BF93916004B8A4F /* UpcomingGameDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF1C23B22BF7B64A004BF66A /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		DF1C23BB2BF8A325004BF66A /* RoundListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundListView.swift; sourceTree = "<group>"; };
+		DF1C23BF2BF8A5A5004BF66A /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
+		DF1C23CF2BF8BC6B004BF66A /* KinoOdds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinoOdds.swift; sourceTree = "<group>"; };
+		DF1C23D12BF8C89D004BF66A /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		DF1C23D42BF8CC16004BF66A /* LiveResultsWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveResultsWebView.swift; sourceTree = "<group>"; };
+		DF1C23D62BF8CC40004BF66A /* WebViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRepresentable.swift; sourceTree = "<group>"; };
+		DF1C23D92BF8E8E2004BF66A /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		DF1C23DC2BF8E91F004BF66A /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		DF1C23DF2BF92210004BF66A /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		DF1C23E12BF9230A004BF66A /* GreeceKinoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreeceKinoDTO.swift; sourceTree = "<group>"; };
+		DF1C23F72BF9292C004BF66A /* GreeceKinoContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreeceKinoContent.swift; sourceTree = "<group>"; };
 		DF3DCF192BF68D7E00A87D4C /* GamblingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamblingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF3DCF1C2BF68D7E00A87D4C /* GamblingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamblingAppApp.swift; sourceTree = "<group>"; };
-		DF3DCF1E2BF68D7E00A87D4C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DF3DCF1E2BF68D7E00A87D4C /* GreekKinoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreekKinoView.swift; sourceTree = "<group>"; };
 		DF3DCF202BF68D7F00A87D4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF3DCF232BF68D7F00A87D4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DFFCEA542BF938F9004B8A4F /* WinningNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningNumbers.swift; sourceTree = "<group>"; };
+		DFFCEA562BF93916004B8A4F /* UpcomingGameDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingGameDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +60,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF1C23B12BF7B636004BF66A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DF1C23B22BF7B64A004BF66A /* Date+Extension.swift */,
+				DF1C23D12BF8C89D004BF66A /* Double+Extension.swift */,
+				DF1C23DF2BF92210004BF66A /* Color+Extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DF1C23BA2BF8A314004BF66A /* Round List View */ = {
+			isa = PBXGroup;
+			children = (
+				DF1C23BB2BF8A325004BF66A /* RoundListView.swift */,
+			);
+			path = "Round List View";
+			sourceTree = "<group>";
+		};
+		DF1C23BD2BF8A56B004BF66A /* Business Layer */ = {
+			isa = PBXGroup;
+			children = (
+				DF1C23BF2BF8A5A5004BF66A /* NetworkingClient.swift */,
+			);
+			path = "Business Layer";
+			sourceTree = "<group>";
+		};
+		DF1C23C12BF8A5D0004BF66A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF1C23CF2BF8BC6B004BF66A /* KinoOdds.swift */,
+				DF1C23E12BF9230A004BF66A /* GreeceKinoDTO.swift */,
+				DF1C23F72BF9292C004BF66A /* GreeceKinoContent.swift */,
+				DFFCEA542BF938F9004B8A4F /* WinningNumbers.swift */,
+				DFFCEA562BF93916004B8A4F /* UpcomingGameDTO.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF1C23D32BF8CBD3004BF66A /* Live Result WebView */ = {
+			isa = PBXGroup;
+			children = (
+				DF1C23D42BF8CC16004BF66A /* LiveResultsWebView.swift */,
+				DF1C23D62BF8CC40004BF66A /* WebViewRepresentable.swift */,
+			);
+			path = "Live Result WebView";
+			sourceTree = "<group>";
+		};
+		DF1C23D82BF8E8C6004BF66A /* TabBar View */ = {
+			isa = PBXGroup;
+			children = (
+				DF1C23D92BF8E8E2004BF66A /* TabBarView.swift */,
+			);
+			path = "TabBar View";
+			sourceTree = "<group>";
+		};
+		DF1C23DB2BF8E906004BF66A /* Results View */ = {
+			isa = PBXGroup;
+			children = (
+				DF1C23DC2BF8E91F004BF66A /* ResultsView.swift */,
+			);
+			path = "Results View";
+			sourceTree = "<group>";
+		};
 		DF3DCF102BF68D7E00A87D4C = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +142,15 @@
 		DF3DCF1B2BF68D7E00A87D4C /* GamblingApp */ = {
 			isa = PBXGroup;
 			children = (
+				DFFCEA582BF956BC004B8A4F /* Greek Kino View */,
+				DF1C23DB2BF8E906004BF66A /* Results View */,
+				DF1C23D82BF8E8C6004BF66A /* TabBar View */,
+				DF1C23D32BF8CBD3004BF66A /* Live Result WebView */,
+				DF1C23C12BF8A5D0004BF66A /* Model */,
+				DF1C23BD2BF8A56B004BF66A /* Business Layer */,
+				DF1C23BA2BF8A314004BF66A /* Round List View */,
+				DF1C23B12BF7B636004BF66A /* Helpers */,
 				DF3DCF1C2BF68D7E00A87D4C /* GamblingAppApp.swift */,
-				DF3DCF1E2BF68D7E00A87D4C /* ContentView.swift */,
 				DF3DCF202BF68D7F00A87D4C /* Assets.xcassets */,
 				DF3DCF222BF68D7F00A87D4C /* Preview Content */,
 			);
@@ -65,6 +163,14 @@
 				DF3DCF232BF68D7F00A87D4C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DFFCEA582BF956BC004B8A4F /* Greek Kino View */ = {
+			isa = PBXGroup;
+			children = (
+				DF3DCF1E2BF68D7E00A87D4C /* GreekKinoView.swift */,
+			);
+			path = "Greek Kino View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +243,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF3DCF1F2BF68D7E00A87D4C /* ContentView.swift in Sources */,
+				DF1C23D52BF8CC16004BF66A /* LiveResultsWebView.swift in Sources */,
+				DF1C23F82BF9292C004BF66A /* GreeceKinoContent.swift in Sources */,
+				DF1C23E22BF9230A004BF66A /* GreeceKinoDTO.swift in Sources */,
+				DF1C23E02BF92210004BF66A /* Color+Extension.swift in Sources */,
+				DF1C23D22BF8C89D004BF66A /* Double+Extension.swift in Sources */,
+				DFFCEA572BF93916004B8A4F /* UpcomingGameDTO.swift in Sources */,
+				DF1C23BC2BF8A325004BF66A /* RoundListView.swift in Sources */,
+				DF1C23C02BF8A5A5004BF66A /* NetworkingClient.swift in Sources */,
+				DF3DCF1F2BF68D7E00A87D4C /* GreekKinoView.swift in Sources */,
+				DF1C23DD2BF8E91F004BF66A /* ResultsView.swift in Sources */,
+				DF1C23D02BF8BC6B004BF66A /* KinoOdds.swift in Sources */,
+				DFFCEA552BF938F9004B8A4F /* WinningNumbers.swift in Sources */,
+				DF1C23D72BF8CC40004BF66A /* WebViewRepresentable.swift in Sources */,
 				DF3DCF1D2BF68D7E00A87D4C /* GamblingAppApp.swift in Sources */,
+				DF1C23DA2BF8E8E2004BF66A /* TabBarView.swift in Sources */,
+				DF1C23B32BF7B64A004BF66A /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +399,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +428,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
