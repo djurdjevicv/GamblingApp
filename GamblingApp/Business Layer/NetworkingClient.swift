@@ -12,7 +12,7 @@ class NetworkingClient {
     static let shared = NetworkingClient()
     
     func getUpcomingGames(completion: @escaping ([UpcomingGameDTO]) -> Void) {
-        guard let url = URL(string: "https://api.opap.gr/draws/v3.0/1100/upcoming/20") else { return }
+        guard let url = Constants.API.upcomingGreekKenoGames else { return }
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) {data, response, error in
             let decoder = JSONDecoder()
@@ -23,16 +23,28 @@ class NetworkingClient {
         task.resume()
     }
     
-    func getGreeceKinoResults(completion: @escaping ([GreeceKinoDTO]) -> Void) {
+    func getGreekKenoResults(completion: @escaping ([GreekKenoDTO]) -> Void) {
         let currentDate = Date.getDateForResultsScreen()
-        guard let url = URL(string: "https://api.opap.gr/draws/v3.0/1100/draw-date/\(currentDate)/\(currentDate)") else { return }
+        guard let url = Constants.API.greekKenoGamesResultByDate(from: currentDate, to: currentDate) else { return }
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) {data, response, error in
             let decoder = JSONDecoder()
-            if let data, let results = try? decoder.decode(GreeceKinoContent.self, from: data) {
-                if let greeceKinoResults = results.content {
-                    completion(greeceKinoResults)
+            if let data, let results = try? decoder.decode(GreekKenoContent.self, from: data) {
+                if let greekKenoResults = results.content {
+                    completion(greekKenoResults)
                 }
+            }
+        }
+        task.resume()
+    }
+    
+    func getGameResultData(drawId: Int, completion: @escaping (GreekKenoDTO) -> Void) {
+        guard let url = Constants.API.greekKenoById("\(drawId)") else { return }
+
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) {data, response, error in
+            let decoder = JSONDecoder()
+            if let data, let result = try? decoder.decode(GreekKenoDTO.self, from: data) {
+                completion(result)
             }
         }
         task.resume()

@@ -1,0 +1,303 @@
+{
+  "sourceLanguage" : "sr-Latn-RS",
+  "strings" : {
+    "" : {
+
+    },
+    " %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " %@"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " %@"
+          }
+        }
+      }
+    },
+    " | " : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " | "
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " | "
+          }
+        }
+      }
+    },
+    "%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "🇬🇧" : {
+
+    },
+    "🇷🇸" : {
+
+    },
+    "B.K." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "B.K."
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "B.K."
+          }
+        }
+      }
+    },
+    "Brojeva:" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numbers:"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brojeva:"
+          }
+        }
+      }
+    },
+    "GRČKI KINO (20/80)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GREEK KENO (20/80)"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GRČKI KINO (20/80)"
+          }
+        }
+      }
+    },
+    "Kola" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Round"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kola"
+          }
+        }
+      }
+    },
+    "Kolo:" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Round:"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolo:"
+          }
+        }
+      }
+    },
+    "Kvota" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odd"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kvota"
+          }
+        }
+      }
+    },
+    "Moj broj" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My number"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moj broj"
+          }
+        }
+      }
+    },
+    "MOZZART" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MOZZART"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MOZZART"
+          }
+        }
+      }
+    },
+    "Preostalo za uplatu" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bet remaining time:"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preostalo za uplatu"
+          }
+        }
+      }
+    },
+    "Rezultati" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Results"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rezultati"
+          }
+        }
+      }
+    },
+    "Slučajni odabir" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Random selection"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slučajni odabir"
+          }
+        }
+      }
+    },
+    "Uzivo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Live"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uzivo"
+          }
+        }
+      }
+    },
+    "Vreme izvlačenja" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draw time"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vreme izvlačenja"
+          }
+        }
+      }
+    },
+    "Vreme izvlačenja: " : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draw time:"
+          }
+        },
+        "sr-Latn-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vreme izvlačenja: "
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

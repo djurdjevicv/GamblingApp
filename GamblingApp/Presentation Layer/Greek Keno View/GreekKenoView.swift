@@ -1,5 +1,5 @@
 //
-//  GreekKinoView.swift
+//  GreekKenoView.swift
 //  GamblingApp
 //
 //  Created by Vladimir Djurdjevic on 5/16/24.
@@ -7,26 +7,25 @@
 
 import SwiftUI
 
-struct GreekKinoView: View {
-    let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 10)
+struct GreekKenoView: View {
+    private let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 10)
     let upcomingGame: UpcomingGameDTO
     
-    @State var kinoOdds = [KinoOdds(numberOfBall: 1, odds: 3.75),
-                           KinoOdds(numberOfBall: 2, odds: 14),
-                           KinoOdds(numberOfBall: 3, odds: 65),
-                           KinoOdds(numberOfBall: 4, odds: 275),
-                           KinoOdds(numberOfBall: 5, odds: 1350),
-                           KinoOdds(numberOfBall: 6, odds: 6500),
-                           KinoOdds(numberOfBall: 7, odds: 25000),
-                           KinoOdds(numberOfBall: 8, odds: 125000)]
+    @State var kenoOdds = [KenoOdds(numberOfBall: 1, odds: 3.75),
+                           KenoOdds(numberOfBall: 2, odds: 14),
+                           KenoOdds(numberOfBall: 3, odds: 65),
+                           KenoOdds(numberOfBall: 4, odds: 275),
+                           KenoOdds(numberOfBall: 5, odds: 1350),
+                           KenoOdds(numberOfBall: 6, odds: 6500),
+                           KenoOdds(numberOfBall: 7, odds: 25000),
+                           KenoOdds(numberOfBall: 8, odds: 125000)]
     
     @State var numberOfRandomBalls: Int = 8
     @State var currentTimestamp = Date.now.timeIntervalSince1970
     @State var selectedNumbers = Set<Int>()
     @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var shouldShowResults = false
         
-    let selectedRandomWinNumbers: Set<Int> = {
+    private let selectedRandomWinNumbers: Set<Int> = {
         var numbers = Set<Int>()
         while numbers.count < 20 {
             numbers.insert(Int.random(in: 1...80))
@@ -35,7 +34,7 @@ struct GreekKinoView: View {
     }()
     
     var body: some View {
-        VStack {
+        NavigationStack {
             ScrollView {
                 VStack {
                     headerView()
@@ -53,9 +52,6 @@ struct GreekKinoView: View {
             })
         }
         .onReceive(timer) { _ in
-            if Int(Date.now.timeIntervalSince1970) == upcomingGame.drawTime / 1000 {
-                shouldShowResults = true
-            }
             currentTimestamp = Date.now.timeIntervalSince1970
         }
         .onDisappear {
@@ -63,27 +59,7 @@ struct GreekKinoView: View {
         }
     }
     
-    func numberOfSelectedNumbersView() -> some View {
-        HStack {
-            Text("Moj broj")
-                .foregroundStyle(.dirtyWhite)
-                .padding([.leading, .trailing], 6)
-            
-            ZStack {
-                Circle()
-                    .fill(Color.mozzartYellow)
-                    .background(Color.charcoalBlack)
-                    .frame(width: 35, height: 35)
-                Text("\(selectedNumbers.count)")
-                    .foregroundStyle(.charcoalBlack)
-            }
-            .padding()
-        }
-        .background(Color.darkGray)
-        .border(.gray)
-    }
-    
-    func getRandomNumbers() {
+    private func getRandomNumbers() {
         var randomNumberGenerated =  Set<Int>()
         while randomNumberGenerated.count < numberOfRandomBalls {
             randomNumberGenerated.insert(Int.random(in: 1...80))
@@ -92,17 +68,34 @@ struct GreekKinoView: View {
         selectedNumbers = randomNumberGenerated
     }
     
-    func headerView() -> some View {
+    private func headerView() -> some View {
         HStack {
-            Text(verbatim: "Vreme izvlacenja \(Date.getHourAndMinutesFromTimestamp(timestamp: upcomingGame.drawTime)) | Kolo \(upcomingGame.drawId)")
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                .foregroundColor(Color.dirtyWhite)
-                .font(.system(size: 15))
-            
+            HStack(spacing: 0) {
+                Text("Vreme izvlačenja: ")
+                Text(" \(Date.getMonthAndDayFromTimestamp(timestamp: upcomingGame.drawTime))")
+                Text(" \(Date.getHourAndMinutesFromTimestamp(timestamp: upcomingGame.drawTime))")
+                Text(" | ")
+                Text("Kolo:")
+                Text(verbatim: " \(upcomingGame.drawId)")
+            }
+            .foregroundStyle(Color.dirtyWhite)
+            .font(Constants.CustomFont.ProximaNova.regular14)
+                        
             Spacer()
             
-            Text(Date.getTimeUntilNow(timestamp: upcomingGame.drawTime, currentTimestamp: currentTimestamp))
-                .foregroundStyle(Date.getSecondsUntilGame(gameTimestamp: upcomingGame.drawTime, currentTimestamp: currentTimestamp) < 60 ? Color.red : Color.white)
+            if Date.getSecondsUntilGame(gameTimestamp: upcomingGame.drawTime, currentTimestamp: currentTimestamp) < 0 {
+                NavigationLink {
+                    OneRoundResult(drawId: upcomingGame.drawId)
+                } label: {
+                    Text("Rezultati")
+                        .foregroundStyle(.dirtyWhite)
+                        .font(Constants.CustomFont.ProximaNova.regular17)
+                }
+            } else {
+                Text(Date.getTimeUntilNow(timestamp: upcomingGame.drawTime, currentTimestamp: currentTimestamp))
+                    .foregroundStyle(Date.getSecondsUntilGame(gameTimestamp: upcomingGame.drawTime, currentTimestamp: currentTimestamp) < 60 ? Color.red : Color.white)
+                    .font(Constants.CustomFont.ProximaNova.regular17)
+            }
         }
         .frame(maxWidth: .infinity)
         .frame(height: 50)
@@ -110,28 +103,32 @@ struct GreekKinoView: View {
         .background(Color.darkGray)
     }
     
-    func oddsView() -> some View {
+    private func oddsView() -> some View {
         HStack {
             VStack {
                 Text("B.K.")
                     .foregroundColor(Color.lightGray)
+                    .font(Constants.CustomFont.ProximaNova.regular17)
                 Spacer()
                 Text("Kvota")
                     .foregroundColor(Color.lightGray)
+                    .font(Constants.CustomFont.ProximaNova.regular17)
             }
             .padding([.leading, .trailing], 10)
             ScrollView(.horizontal) {
                 HStack(spacing: 0) {
-                    ForEach(kinoOdds, id: \.self) { odd in
+                    ForEach(kenoOdds, id: \.self) { odd in
                         VStack {
                             Text("\(odd.numberOfBall)")
                                 .foregroundColor(odd.numberOfBall == selectedNumbers.count ?  Color.dirtyWhite : Color.lightGray)
+                                .font(Constants.CustomFont.ProximaNova.regular15)
                             Rectangle()
                                 .fill(Color.lightGray)
                                 .frame(height: 1)
                             Text("\(odd.odds.getOddFormat())")
                                 .foregroundColor(Color.lightGray)
                                 .frame(width: 60)
+                                .font(Constants.CustomFont.ProximaNova.regular15)
                         }
                     }
                 }
@@ -140,22 +137,24 @@ struct GreekKinoView: View {
         }
     }
     
-    func getRandomNumbersView() -> some View {
+    private func getRandomNumbersView() -> some View {
         HStack {
             Button {
                 getRandomNumbers()
             } label: {
-                Text("Slucajni odabir")
+                Text("Slučajni odabir")
                     .padding()
                     .background(Color.blue)
                     .foregroundStyle(Color.dirtyWhite)
                     .padding([.leading])
+                    .font(Constants.CustomFont.ProximaNova.regular20)
             }
             
             Spacer()
             
             Text("Brojeva:")
                 .foregroundStyle(Color.dirtyWhite)
+                .font(Constants.CustomFont.ProximaNova.regular20)
             
             Picker("", selection: $numberOfRandomBalls) {
                 ForEach(1..<16) {
@@ -166,7 +165,7 @@ struct GreekKinoView: View {
         }
     }
     
-    func numbersGridView() -> some View {
+    private func numbersGridView() -> some View {
         LazyVGrid(columns: columns, spacing: 0) {
             ForEach(1..<81, id: \.self) { number in
                 Button {
@@ -181,6 +180,7 @@ struct GreekKinoView: View {
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 44, maxHeight: 44)
                         .foregroundColor(Color.lightGray)
                         .background(Rectangle().strokeBorder(Color.darkGray, lineWidth: 1))
+                        .font(Constants.CustomFont.ProximaNova.regular18)
                         .overlay(
                             selectedNumbers.contains(number) ? Circle()
                                 .stroke(Color.checkNumberColor(number: number), lineWidth: 2)
@@ -190,8 +190,28 @@ struct GreekKinoView: View {
             }
         }
     }
+    
+    private func numberOfSelectedNumbersView() -> some View {
+        HStack {
+            Text("Moj broj")
+                .foregroundStyle(.dirtyWhite)
+                .padding([.leading, .trailing], 6)
+            
+            ZStack {
+                Circle()
+                    .fill(Color.mozzartYellow)
+                    .frame(width: 35, height: 35)
+                Text("\(selectedNumbers.count)")
+                    .foregroundStyle(.charcoalBlack)
+            }
+            .clipShape(Circle())
+            .padding()
+        }
+        .background(Color.darkGray)
+        .border(.dirtyWhite)
+    }
 }
 
-#Preview {
-    GreekKinoView(upcomingGame: UpcomingGameDTO(gameId: 1, drawId: 1, drawTime: 1, status: "active"))
-}
+//#Preview {
+//    GreekKenoView(upcomingGame: )
+//}

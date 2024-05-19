@@ -1,5 +1,5 @@
 //
-//  GreeceKinoDTO.swift
+//  GreekKenoDTO.swift
 //  GamblingApp
 //
 //  Created by Vladimir Djurdjevic on 5/18/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GreeceKinoDTO: Codable, Hashable, Identifiable {
+struct GreekKenoDTO: Codable, Hashable, Identifiable {
     
     var id: Int {
         return drawId
@@ -17,9 +17,9 @@ struct GreeceKinoDTO: Codable, Hashable, Identifiable {
     let drawId : Int
     let drawTime : Int
     let status : String
-    let winningNumbers : WinningNumbers
+    let winningNumbers : WinningNumbers?
     
-    init(gameId: Int, drawId: Int, drawTime: Int, status: String, winningNumbers: WinningNumbers) {
+    init(gameId: Int, drawId: Int, drawTime: Int, status: String, winningNumbers: WinningNumbers?) {
         self.gameId = gameId
         self.drawId = drawId
         self.drawTime = drawTime

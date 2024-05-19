@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
-    
+        
     init() {
         UITabBar.appearance().unselectedItemTintColor = UIColor.dirtyWhite
         UITabBar.appearance().barTintColor = UIColor.darkGray
@@ -21,7 +21,6 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Kola", systemImage: "7.circle")
                 }
-                
             LiveResultsWebView()
                 .tabItem {
                     Label("Uzivo", systemImage: "livephoto")

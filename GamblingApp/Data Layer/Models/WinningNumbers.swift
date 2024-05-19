@@ -8,9 +8,9 @@
 import Foundation
 
 struct WinningNumbers: Codable, Hashable {
-    let list : [Int]
+    let list : [Int]?
 
-    init(list: [Int]) {
+    init(list: [Int]?) {
         self.list = list
     }
 }
