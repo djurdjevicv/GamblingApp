@@ -33,6 +33,9 @@
 		DFFCEA6E2BF9F45D004B8A4F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFCEA6D2BF9F45D004B8A4F /* SplashView.swift */; };
 		DFFCEA8A2BFA0051004B8A4F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DFFCEA892BFA0051004B8A4F /* Localizable.xcstrings */; };
 		DFFCEA902BFA1148004B8A4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFCEA8F2BFA1148004B8A4F /* Constants.swift */; };
+		DFFCEA962BFB3387004B8A4F /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = DFFCEA952BFB3387004B8A4F /* AlertToast */; };
+		DFFCEA992BFB39A0004B8A4F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFCEA982BFB39A0004B8A4F /* NetworkError.swift */; };
+		DFFCEA9B2BFB3A9C004B8A4F /* UserPreferredLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFCEA9A2BFB3A9C004B8A4F /* UserPreferredLanguage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,8 @@
 		DFFCEA6D2BF9F45D004B8A4F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DFFCEA892BFA0051004B8A4F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		DFFCEA8F2BFA1148004B8A4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DFFCEA982BFB39A0004B8A4F /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		DFFCEA9A2BFB3A9C004B8A4F /* UserPreferredLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferredLanguage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFFCEA962BFB3387004B8A4F /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +220,6 @@
 		DFFCEA8B2BFA0C9E004B8A4F /* Application Layer */ = {
 			isa = PBXGroup;
 			children = (
-				DFFCEA5F2BF9DDDF004B8A4F /* Custom Views */,
 				DF1C23B12BF7B636004BF66A /* Helpers */,
 				DFFCEA5B2BF9DC66004B8A4F /* Fonts */,
 				DF3DCF1C2BF68D7E00A87D4C /* GamblingAppApp.swift */,
@@ -229,6 +234,7 @@
 		DFFCEA8C2BFA0CEA004B8A4F /* Data Layer */ = {
 			isa = PBXGroup;
 			children = (
+				DFFCEA972BFB398B004B8A4F /* Enums */,
 				DF1C23C12BF8A5D0004BF66A /* Models */,
 			);
 			path = "Data Layer";
@@ -237,6 +243,7 @@
 		DFFCEA8D2BFA0D3C004B8A4F /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
+				DFFCEA5F2BF9DDDF004B8A4F /* Custom Views */,
 				DF1C23D82BF8E8C6004BF66A /* TabBar View */,
 				DF1C23BA2BF8A314004BF66A /* Round List View */,
 				DFFCEA582BF956BC004B8A4F /* Greek Keno View */,
@@ -245,6 +252,15 @@
 				DF1C23DB2BF8E906004BF66A /* Results View */,
 			);
 			path = "Presentation Layer";
+			sourceTree = "<group>";
+		};
+		DFFCEA972BFB398B004B8A4F /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				DFFCEA9A2BFB3A9C004B8A4F /* UserPreferredLanguage.swift */,
+				DFFCEA982BFB39A0004B8A4F /* NetworkError.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +279,9 @@
 			dependencies = (
 			);
 			name = GamblingApp;
+			packageProductDependencies = (
+				DFFCEA952BFB3387004B8A4F /* AlertToast */,
+			);
 			productName = GamblingApp;
 			productReference = DF3DCF192BF68D7E00A87D4C /* GamblingApp.app */;
 			productType = "com.apple.product-type.application";
@@ -292,6 +311,9 @@
 				"sr-Latn-RS",
 			);
 			mainGroup = DF3DCF102BF68D7E00A87D4C;
+			packageReferences = (
+				DFFCEA942BFB3387004B8A4F /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = DF3DCF1A2BF68D7E00A87D4C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -330,6 +352,7 @@
 				DF1C23D22BF8C89D004BF66A /* Double+Extension.swift in Sources */,
 				DFFCEA6A2BF9EF63004B8A4F /* OneRoundResult.swift in Sources */,
 				DFFCEA572BF93916004B8A4F /* UpcomingGameDTO.swift in Sources */,
+				DFFCEA992BFB39A0004B8A4F /* NetworkError.swift in Sources */,
 				DF1C23BC2BF8A325004BF66A /* RoundListView.swift in Sources */,
 				DF1C23C02BF8A5A5004BF66A /* NetworkingClient.swift in Sources */,
 				DFFCEA902BFA1148004B8A4F /* Constants.swift in Sources */,
@@ -338,6 +361,7 @@
 				DF1C23D02BF8BC6B004BF66A /* KenoOdds.swift in Sources */,
 				DFFCEA552BF938F9004B8A4F /* WinningNumbers.swift in Sources */,
 				DF1C23D72BF8CC40004BF66A /* WebViewRepresentable.swift in Sources */,
+				DFFCEA9B2BFB3A9C004B8A4F /* UserPreferredLanguage.swift in Sources */,
 				DF3DCF1D2BF68D7E00A87D4C /* GamblingAppApp.swift in Sources */,
 				DFFCEA6E2BF9F45D004B8A4F /* SplashView.swift in Sources */,
 				DF1C23DA2BF8E8E2004BF66A /* TabBarView.swift in Sources */,
@@ -551,6 +575,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DFFCEA942BFB3387004B8A4F /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DFFCEA952BFB3387004B8A4F /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DFFCEA942BFB3387004B8A4F /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DF3DCF112BF68D7E00A87D4C /* Project object */;
 }

@@ -6,17 +6,15 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct RoundListView: View {
     
     @State var upcomingGames = [UpcomingGameDTO]()
     @State var currentTimestamp = Date().timeIntervalSince1970
     @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
-    private var userPreferredLanguage: String {
-      return Locale.preferredLanguages.first ?? "Language preference not found"
-    }
-    
+    @State private var showFetchErrorToast = false
+        
     var body: some View {
         NavigationStack {
             VStack {
@@ -32,11 +30,12 @@ struct RoundListView: View {
                     buttonForChangingLanguages()
                 }
             })
+            .toast(isPresenting: $showFetchErrorToast) {
+                AlertToast(displayMode: .banner(.pop), type: .regular, title: UserPreferredLanguage.userPreferredLanguage() == .english ? "Failed to fetch upcoming games." : "Preuzimanje predstojećih igara nije uspelo!")
+            }
         }
         .onAppear {
-            NetworkingClient.shared.getUpcomingGames { games in
-                upcomingGames = games
-            }
+            fetchUpcomingGames()
             timer = timer.upstream.autoconnect()
         }
         .onDisappear {
@@ -46,10 +45,26 @@ struct RoundListView: View {
             currentTimestamp = Date().timeIntervalSince1970
             if let firstGame = upcomingGames.first {
                 if Int(firstGame.drawTime / 1000) < Int(currentTimestamp) {
-                    NetworkingClient.shared.getUpcomingGames { games in
-                        upcomingGames = games
-                    }
+                    upcomingGames.removeFirst()
+                    fetchUpcomingGames()
                 }
+            }
+        }
+    }
+    
+    private func fetchUpcomingGames() {
+        NetworkingClient.shared.getUpcomingGames { result in
+            switch result {
+            case .success(let games):
+                upcomingGames = games
+            case .failure(let failure):
+                switch failure {
+                case .decodeError:
+                    print("RoundListView: Error while fatching upcoming games - Decode error!")
+                case .badURL:
+                    print("RoundListView: Error while fatching upcoming games - Bad URL!")
+                }
+                showFetchErrorToast = true
             }
         }
     }
@@ -60,13 +75,8 @@ struct RoundListView: View {
                 UIApplication.shared.open(url)
             }
         }, label: {
-            if userPreferredLanguage == "sr-Latn-US" {
-                Text("🇷🇸")
-                    .font(.system(size: 32))
-            } else if userPreferredLanguage == "en-US" {
-                Text("🇬🇧")
-                    .font(.system(size: 32))
-            }
+            Text(UserPreferredLanguage.userPreferredLanguage() == .english ? "🇬🇧" : "🇷🇸")
+                .font(.system(size: 32))
         })
     }
         
@@ -109,7 +119,7 @@ struct RoundListView: View {
                     Spacer()
                                     
                     Text(Date.getTimeUntilNow(timestamp: game.drawTime, currentTimestamp: currentTimeStamp))
-                        .foregroundStyle(Date.getSecondsUntilGame(gameTimestamp: game.drawTime, currentTimestamp: currentTimeStamp) < 10 ? Color.errorRed : Color.dirtyWhite)
+                        .foregroundStyle(Date.getSecondsUntilGame(gameTimestamp: game.drawTime, currentTimestamp: currentTimeStamp) < 60 ? Color.errorRed : Color.dirtyWhite)
                 }
                 .font(Constants.CustomFont.ProximaNova.regular21)
             }
@@ -118,6 +128,7 @@ struct RoundListView: View {
             .padding([.top, .bottom], 10)
         }
         .listStyle(.plain)
+        .foregroundStyle(Color.charcoalBlack)
         .background(Color.charcoalBlack)
     }
 }

@@ -6,23 +6,25 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct OneRoundResult: View {
     
     let drawId: Int
-    @State var result: GreekKenoDTO? = nil
+    @State var kenoResult: GreekKenoDTO? = nil
+    @State private var showFetchErrorToast = false
     
     var body: some View {
         List {
-            ZStack {
-                if let result {
-                    GameResultView(result: result)
+            if let kenoResult {
+                ForEach([kenoResult], id: \.self) { result in
+                    GameResultView(result: kenoResult)
                         .background(Color.charcoalBlack)
+                        .listRowBackground(Color.charcoalBlack)
+                        .listRowSeparator(.hidden)
+                        .padding([.top, .bottom], 10)
                 }
             }
-            .listRowBackground(Color.charcoalBlack)
-            .listRowSeparator(.hidden)
-            .padding([.top, .bottom], 10)
         }
         .listStyle(.plain)
         .background(Color.charcoalBlack)
@@ -35,14 +37,25 @@ struct OneRoundResult: View {
             fetchGameResultData()
         }
     }
-    
+                
     private func fetchGameResultData() {
-        NetworkingClient.shared.getGameResultData(drawId: 1089785) { gameResult in
-            result = gameResult
+        NetworkingClient.shared.getGameResultData(drawId: drawId) { result in
+            switch result {
+            case .success(let gameResult):
+                kenoResult = gameResult
+            case .failure(let failure):
+                switch failure {
+                case .decodeError:
+                    print("OneRoundResult: Error while fatching game result - Decode error!")
+                case .badURL:
+                    print("OneRoundResult: Error while fatching game result - Bad URL!")
+                }
+                showFetchErrorToast = true
+            }
         }
     }
 }
 
 #Preview {
-    OneRoundResult(drawId: 1)
+    OneRoundResult(drawId: 1090083)
 }

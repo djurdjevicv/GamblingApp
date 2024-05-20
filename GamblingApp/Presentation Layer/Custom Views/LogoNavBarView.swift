@@ -16,7 +16,6 @@ struct LogoNavBarView: View {
                 .clipShape(Circle())
             
             Text("MOZZART")
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .foregroundStyle(Color.mozzartYellow)
                 .font(Constants.CustomFont.Linotte.heavy32)
         }
